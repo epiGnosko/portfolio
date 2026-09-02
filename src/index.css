@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --color-turquoise: #40E0D0;
+  --color-turquoise-dim: rgba(64, 224, 208, 0.12);
+  --color-turquoise-glow: rgba(64, 224, 208, 0.35);
+  --color-void: #050505;
+}
+
+:root {
+  color-scheme: dark;
+  --turquoise: #40E0D0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+}
+
+body {
+  background-color: #050505;
+  color: #ededed;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom terminal scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #40E0D0;
+}
+
+/* Subtle dot grid pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(64, 224, 208, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Hyprland Glass Card */
+.hypr-card {
+  background: rgba(12, 14, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hypr-card:hover {
+  border-color: rgba(64, 224, 208, 0.4);
+  box-shadow: 0 0 25px -5px rgba(64, 224, 208, 0.18), inset 0 0 15px -5px rgba(64, 224, 208, 0.08);
+}
+
+/* Terminal blink cursor */
+@keyframes terminalBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: terminalBlink 1s infinite;
+}
+
+/* Glowing text utility */
+.text-glow {
+  text-shadow: 0 0 10px rgba(64, 224, 208, 0.6), 0 0 20px rgba(64, 224, 208, 0.3);
+}
+
+.text-glow-subtle {
+  text-shadow: 0 0 8px rgba(64, 224, 208, 0.35);
+}
+
+/* Bento grid border animation container */
+.bento-card-wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(12, 14, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.bento-card-wrapper:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 30px -10px rgba(64, 224, 208, 0.25);
+}
