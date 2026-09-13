@@ -9,8 +9,8 @@ export const PERSONAL_INFO = {
   phone: '+91 9992153036',
   location: 'Punjab, India',
   status: 'Available for Autonomous Systems & Infrastructure Engineering',
-  github: 'https://github.com',
-  linkedin: 'https://linkedin.com',
+  github: 'https://github.com/epiGnosko',
+  linkedin: 'https://linkedin.com/in/gurmukh--singh',
   systemSpecs: {
     os: 'Arch Linux x86_64',
     kernel: '6.12.9-zen1',
@@ -77,17 +77,31 @@ export const EXPERIENCES: ExperienceItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: 'spotify-telegram',
-    title: 'Spotify to Telegram Archiver',
-    category: 'Automation & Distributed ETL',
-    summary: 'Autonomous headless media archiving pipeline syncing playlists to cloud channels.',
-    description: 'Engineered an automated playlist-saving and archival microservice utilizing Docker, n8n orchestration, and the Spotify Web API. Eliminates repetitive manual exports and achieves automated differential synchronization.',
-    impact: 'Reduced manual playlist offloading and archival time by 95% with zero dropped payload cycles.',
-    metrics: { label: 'Time Reduction', value: '95%' },
-    tags: ['Docker', 'n8n', 'Node.js', 'REST APIs', 'Telegram Bot API', 'Automation'],
-    architectureNotes: 'Event-driven webhook triggers -> JWT auth renewal -> Rate-limited parallel chunk downloading -> Audio tag preservation -> Telegram CDN dispatch.',
+    id: 'self-correcting-rag',
+    title: 'Self-Corrective Autonomous RAG Pipeline',
+    category: 'Agentic AI & Neural Retrieval',
+    summary: 'Cyclic multi-agent retrieval framework with automated evaluation, web search fallback, and self-reflection loops.',
+    description: 'Architected an autonomous Self-Corrective RAG platform implementing Self-RAG and CRAG patterns via LangGraph cyclic state machines. Evaluates document retrieval confidence (0–100 score), filters hallucinations, triggers multi-provider web search fallbacks (Tavily/DuckDuckGo/Serper) for ambiguous queries, and performs iterative self-reflection for verified answer generation.',
+    impact: 'Eliminated hallucinations via multi-stage decision routing (>=80 correct, 50-79 ambiguous, <50 rewrite) and self-critique verification.',
+    metrics: { label: 'Verification Loop', value: 'Cyclic Self-RAG' },
+    tags: ['LangGraph', 'Python', 'FastAPI', 'ChromaDB', 'React 19', 'NVIDIA NIM', 'Docker'],
+    repoUrl: 'https://github.com/epiGnosko/Self-Correcting-RAG',
+    architectureNotes: 'User Query -> Dense semantic retrieval (ChromaDB + NVIDIA Nemotron) -> Retrieval Evaluator Node (Score >=80 Correct | 50-79 Ambiguous | <50 Rewrite) -> Knowledge Refinement & Multi-Provider Web Fallback (Tavily/Serper) -> Constrained LLM Synthesis -> Self-Reflection Evaluator (Verdict: good / regenerate / retrieve_more) -> Verified Output.',
     featured: true,
     gridSpan: 'col-span-12 lg:col-span-7'
+  },
+  {
+    id: 'media-stream-archiver',
+    title: 'Automated Media Stream & Playlist Archiver',
+    category: 'Automation & Distributed ETL',
+    summary: 'Autonomous headless media archiving pipeline syncing playlists to cloud messaging channels.',
+    description: 'Engineered an automated playlist-saving and archival microservice utilizing Docker, n8n orchestration, and media streaming REST APIs. Eliminates repetitive manual exports and achieves automated differential synchronization to cloud channels.',
+    impact: 'Reduced manual playlist offloading and archival time by 95% with zero dropped payload cycles.',
+    metrics: { label: 'Time Reduction', value: '95%' },
+    tags: ['Docker', 'n8n', 'Node.js', 'REST APIs', 'Cloud Messenger API', 'Automation'],
+    architectureNotes: 'Event-driven webhook triggers -> JWT auth renewal -> Rate-limited parallel chunk downloading -> Audio metadata preservation -> Cloud Messenger CDN dispatch.',
+    featured: true,
+    gridSpan: 'col-span-12 lg:col-span-5'
   },
   {
     id: 'rl-neat-agent',
@@ -100,7 +114,7 @@ export const PROJECTS: ProjectItem[] = [
     tags: ['Python', 'Pygame', 'NEAT', 'Genetic Algorithms', 'Reinforcement Learning', 'Topology Optimization'],
     architectureNotes: 'Custom fitness function penalizing idle hovering -> dynamic speciation via genomic distance metric -> crossover & mutation of structural synapse weights.',
     featured: true,
-    gridSpan: 'col-span-12 lg:col-span-5'
+    gridSpan: 'col-span-12 md:col-span-6 lg:col-span-4'
   },
   {
     id: 'pothole-vision',
@@ -113,7 +127,7 @@ export const PROJECTS: ProjectItem[] = [
     tags: ['YOLOv8', 'OpenCV', 'PyTorch', 'Python', 'Object Detection', 'Edge Computing'],
     architectureNotes: 'TensorRT quantized weights -> asynchronous OpenCV frame ring buffer -> bounding box IoU spatial tracking -> geo-tagged JSON anomaly logging.',
     featured: false,
-    gridSpan: 'col-span-12 lg:col-span-5'
+    gridSpan: 'col-span-12 md:col-span-6 lg:col-span-4'
   },
   {
     id: 'automated-report-card',
@@ -126,7 +140,7 @@ export const PROJECTS: ProjectItem[] = [
     tags: ['Python', 'Pandas', 'LaTeX', 'PDF Generation', 'ETL Pipeline', 'Data Cleansing'],
     architectureNotes: 'CSV parsing with strict schema validation -> statistical z-score & percentile computation -> Jinja2 to LaTeX templating engine -> headless pdflatex worker subprocesses.',
     featured: false,
-    gridSpan: 'col-span-12 lg:col-span-7'
+    gridSpan: 'col-span-12 md:col-span-12 lg:col-span-4'
   }
 ];
 
@@ -150,6 +164,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: 'cpu',
     description: 'Neural architectures, computer vision models, and data workflows',
     skills: [
+      { name: 'Self-Corrective RAG', level: 'Advanced', details: 'LangGraph, cyclic evaluation states, dynamic query refinement, ChromaDB', tag: 'GenAI' },
       { name: 'Neuroevolution (NEAT)', level: 'Advanced', details: 'Genetic topology evolution, speciation, fitness optimization', tag: 'RL' },
       { name: 'Computer Vision', level: 'Advanced', details: 'YOLOv8, OpenCV, Image preprocessing, Real-time bounding inference', tag: 'Vision' },
       { name: 'PyTorch', level: 'Proficient', details: 'Tensors, autograd, custom neural network training loops', tag: 'Deep Learning' },

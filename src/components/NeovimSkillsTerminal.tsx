@@ -13,7 +13,7 @@ export const NeovimSkillsTerminal: React.FC = () => {
   const [cliHistory, setCliHistory] = useState<Array<{ cmd: string; output: string }>>([
     { cmd: 'whoami', output: 'gurmukh (Autonomous Systems & Low-Latency Engineer)' },
     { cmd: 'uname -srm', output: 'Linux 6.12.9-arch1-1-zen x86_64' },
-    { cmd: 'cat /proc/skills', output: 'Languages: Python, Rust, C/C++, Java, R, SQL, TypeScript\nTech: NEAT, Computer Vision, Docker, Linux, Git, n8n, PyTorch, LaTeX' }
+    { cmd: 'cat /proc/skills', output: 'Languages: Python, Rust, C/C++, Java, R, SQL, TypeScript\nTech: LangGraph, RAG, NEAT, Computer Vision, Docker, Linux, Git, n8n, PyTorch, LaTeX' }
   ]);
 
   const typingAnimationRef = useRef<anime.AnimeInstance | null>(null);

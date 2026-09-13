@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import anime from 'animejs';
 import { PROJECTS } from '../data/portfolioData';
 import type { ProjectItem } from '../types/portfolio';
-import { Terminal, Zap, Activity, Eye, FileText, Network } from 'lucide-react';
+import { Terminal, Zap, Activity, Eye, FileText, Network, ExternalLink } from 'lucide-react';
 import { soundFx } from '../utils/soundEffects';
 
 interface BentoCardProps {
@@ -67,9 +67,9 @@ const BentoCard: React.FC<BentoCardProps> = ({ project, index }) => {
   };
 
   const getCategoryIcon = (cat: string) => {
-    if (cat.includes('Neuroevolution') || cat.includes('AI')) return <Network className="w-4 h-4 text-[#40E0D0]" />;
+    if (cat.includes('Neuroevolution') || cat.includes('AI') || cat.includes('RAG')) return <Network className="w-4 h-4 text-[#40E0D0]" />;
     if (cat.includes('Vision')) return <Eye className="w-4 h-4 text-[#40E0D0]" />;
-    if (cat.includes('ETL') || cat.includes('Document')) return <FileText className="w-4 h-4 text-[#40E0D0]" />;
+    if (cat.includes('ETL') || cat.includes('Document') || cat.includes('Automation')) return <FileText className="w-4 h-4 text-[#40E0D0]" />;
     return <Zap className="w-4 h-4 text-[#40E0D0]" />;
   };
 
@@ -125,6 +125,22 @@ const BentoCard: React.FC<BentoCardProps> = ({ project, index }) => {
               <span className="px-2 py-0.5 rounded bg-[#40E0D0]/10 text-[#40E0D0] border border-[#40E0D0]/20 font-bold">
                 {project.metrics.label}: {project.metrics.value}
               </span>
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    soundFx.playKeyClick();
+                  }}
+                  className="flex items-center gap-1 px-2 py-0.5 rounded bg-white/5 hover:bg-[#40E0D0]/20 text-neutral-300 hover:text-[#40E0D0] border border-white/10 hover:border-[#40E0D0]/40 transition-colors"
+                  title="View GitHub Repository"
+                >
+                  <ExternalLink className="w-3 h-3 text-[#40E0D0]" />
+                  <span className="text-[10px] uppercase font-mono">Repo</span>
+                </a>
+              )}
               <span className="text-neutral-600 font-light">#{index + 1}</span>
             </div>
           </div>
